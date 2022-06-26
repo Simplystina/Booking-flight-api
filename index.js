@@ -5,12 +5,13 @@ const models = require("./models/Flight");
 const routes = require("./routes/flightRoute");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(json());
 
-app.use("/", routes);
+app.use("/flight", routes);
 
-const port = process.env.PORT || 3000;
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
